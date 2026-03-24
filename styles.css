@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #2b2a2d 0%, #141414 60%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+main {
+    width: min(95vw, 900px);
+    padding: 2rem;
+}
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 0.75rem;
+}
+p {
+    margin-bottom: 1.5rem;
+    color: #e5e5e5;
+}
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+.profile-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.profile-card:hover {
+    transform: translateY(-3px);
+    border-color: #e50914;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+.profile-card.active {
+    border-color: #e50914;
+}
+.profile-picture {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0.7rem;
+}
+.profile-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+#selectedProfile {
+    margin-top: 1.5rem;
+    color: #ffd2d2;
+}
