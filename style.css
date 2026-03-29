@@ -1,0 +1,71 @@
+@charset "UTF-8"; /* define codificação de caracteres UTF-8 */
+
+body {
+    background-color: #000; /* fundo preto estilo Netflix */
+    color: #fff; /* texto branco para contraste */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* fonte sans-serif legível */
+    margin: 0; /* remove margem padrão do browser */
+    min-height: 100vh; /* garante altura mínima igual à janela */
+}
+
+h1 {
+    font-size: 2.5rem; /* título grande para destaque */
+    font-weight: bold; /* texto em negrito */
+    margin: 20px; /* espaçamento ao redor do título */
+}
+
+main {
+    display: flex; /* usa flexbox para layout centralizado */
+    flex-direction: column; /* organiza os filhos em coluna */
+    align-items: center; /* centraliza horizontalmente */
+    justify-content: center; /* centraliza verticalmente */
+    min-height: 100vh; /* garante altura mínima igual à janela */
+}
+
+section[aria-label="Seleção de perfis"] {
+    width: 100%; /* ocupa 100% da largura disponível */
+    max-width: 600px; /* limite de largura para não esticar demais */
+    display: flex; /* usa flexbox para centralização */
+    justify-content: center; /* centra o nav horizontalmente */
+}
+
+nav.profiles {
+    display: flex; /* perfis em linha */
+    gap: 2rem; /* espaço entre cada perfil */
+}
+
+.profile {
+    text-decoration: none; /* remove sublinhado de link, se houver */
+    color: #fff; /* cor branca nos textos/links */
+    transition: transform 0.2s, box-shadow 0.2s; /* anima transformações e sombra */
+}
+
+figure {
+    margin: 0; /* remove margem padrão de figure */
+    display: flex; /* usa flexbox para legenda abaixo da imagem */
+    flex-direction: column; /* imagem sobre legenda */
+    align-items: center; /* centraliza conteúdo */
+}
+
+img {
+    width: 120px; /* largura da imagem do perfil */
+    height: 120px; /* altura da imagem do perfil */
+    border-radius: 8px; /* cantos arredondados */
+    object-fit: cover; /* recorta mantendo proporção */
+    margin-bottom: 0.5rem; /* espaço abaixo da imagem */
+    background-color: #222; /* cor de fundo caso imagem não carregue imediatamente */
+}
+
+img:hover {
+    border: 1px solid #fff; /* adiciona borda branca ao passar o mouse */
+    transform: scale(1.05); /* levemente amplia a imagem para efeito de foco */
+    transition: transform 0.2s ease, border 0.2s ease; /* suaviza animação no hover */
+}
+
+figcaption {
+    margin-top: 0.5rem; /* espaço entre imagem e legenda */
+    font-size: 1.1rem; /* define a altura do texto da legenda */
+    font-weight: 500; /* leve negrito para melhor legibilidade */
+    letter-spacing: 0.5px; /* espaçamento entre caracteres */
+    color: #fff; /* mantém o texto branco */
+}
