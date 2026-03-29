@@ -13,6 +13,7 @@ h1 {
     font-size: 2.5rem; /* título grande para destaque */
     font-weight: bold; /* texto em negrito */
     margin: 20px; /* espaçamento ao redor do título */
+    padding: 10px;
 }
 
 main {

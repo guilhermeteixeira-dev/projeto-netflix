@@ -18,7 +18,7 @@ body {
 }
 main {
     width: min(95vw, 900px);
-    padding: 2rem;
+    padding: 1rem;
 }
 h1 {
     font-size: clamp(1.5rem, 4vw, 3.5rem);
