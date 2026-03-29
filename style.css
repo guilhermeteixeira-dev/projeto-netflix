@@ -89,6 +89,7 @@ figcaption {
     }
 
     nav.profiles {
+        flex-direction: row;
         gap: 1.5rem; /* diminui espaço entre perfis */
     }
 

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,27 +27,41 @@ p {
     margin-bottom: 1.5rem;
     color: #e5e5e5;
 }
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .profiles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
 }
+
 .profile-card {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05); /* suaviza o branco sobre o fundo escuro */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 1rem;
     cursor: pointer;
     transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.profile-card figure,
+.profile-card img {
+    background-color: rgba(0, 0, 0, 0.3); /* mantém ícone mais escuro, harmonizado com o fundo */
 }
 .profile-card:hover {
     transform: translateY(-3px);
     border-color: #e50914;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
+
 .profile-card.active {
     border-color: #e50914;
 }
+
 .profile-picture {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -54,11 +70,70 @@ p {
     background-position: center;
     margin-bottom: 0.7rem;
 }
+
 .profile-name {
     font-size: 1.05rem;
     font-weight: 600;
 }
+
 #selectedProfile {
     margin-top: 1.5rem;
     color: #ffd2d2;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    z-index: 1000;
+}
+
+#themeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+body.light-mode {
+    background: radial-gradient(circle at top, #f5f5f5 0%, #eaeaea 60%);
+    color: #111;
+}
+
+body.light-mode .profile-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .profiles,
+body.light-mode ul,
+body.light-mode li {
+    background: transparent !important;
+}
+
+body.light-mode .profile-name,
+body.light-mode p,
+body.light-mode h1,
+body.light-mode figcaption,
+body.light-mode #selectedProfile {
+    color: black;
+}
+
+body.light-mode #themeToggle {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #111;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
