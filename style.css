@@ -12,7 +12,7 @@ h1 {
     text-align: center; /* centraliza o título */
     font-size: 2.5rem; /* título grande para destaque */
     font-weight: bold; /* texto em negrito */
-    margin: 50px; /* espaçamento ao redor do título */
+    margin: 20px; /* espaçamento ao redor do título */
 }
 
 main {
