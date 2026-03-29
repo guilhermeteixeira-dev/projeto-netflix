@@ -69,3 +69,46 @@ figcaption {
     letter-spacing: 0.5px; /* espaçamento entre caracteres */
     color: #fff; /* mantém o texto branco */
 }
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2rem; /* reduz tamanho do título em tablets */
+    }
+
+    nav.profiles {
+        gap: 1.5rem; /* diminui espaço entre perfis */
+    }
+
+    img {
+        width: 100px; /* reduz largura da imagem */
+        height: 100px; /* reduz altura da imagem */
+    }
+
+    figcaption {
+        font-size: 1rem; /* ajusta tamanho da legenda */
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* título ainda menor em celulares */
+        margin: 15px; /* reduz margem */
+    }
+
+    nav.profiles {
+        flex-direction: column; /* empilha perfis verticalmente */
+        gap: 1rem; /* espaço menor entre perfis */
+    }
+
+    img {
+        width: 80px; /* imagem menor para telas pequenas */
+        height: 80px; /* altura proporcional */
+    }
+
+    figcaption {
+        font-size: 0.9rem; /* legenda menor */
+        letter-spacing: 0.3px; /* ajusta espaçamento */
+    }
+}
