@@ -100,37 +100,22 @@ figcaption {
     }
 }
 
-/* Responsividade para celulares */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem; /* título ainda menor em celulares */
-        margin: 15px; /* reduz margem */
+@media (max-width: 600px) {
+    main {
+        margin-top: 2rem; /* adiciona margem superior para melhor espaçamento em telas menores */
+        min-height: auto; /* permite altura automática para telas menores */
+        padding: 1rem 0; /* adiciona padding para evitar que o conteúdo encoste nas bordas */
     }
 
     nav.profiles {
-        display: flex; /* mantém flexbox para centralização */
-        flex-direction: column; /* empilha perfis verticalmente */
-        gap: 1rem; /* espaço menor entre perfis */
+        flex-direction: column;
+        align-items: center; /* centraliza os perfis verticalmente */
     }
 
     ul {
-        display: flex; /* mantém flexbox */
-        flex-direction: column; /* lista vertical */
-        align-items: center; /* centraliza itens na vertical da lista */
-        gap: 1rem; /* espaço entre itens de lista */
-    }
-
-    li {
-        width: 100%; /* ocupa largura total do container */
-    }
-
-    img {
-        width: 80px; /* imagem menor para telas pequenas */
-        height: 80px; /* altura proporcional */
-    }
-
-    figcaption {
-        font-size: 0.9rem; /* legenda menor */
-        letter-spacing: 0.3px; /* ajusta espaçamento */
+        gap: 4rem; /* aumenta espaço entre os itens da lista para melhor toque em telas pequenas */
     }
 }
+
+
+
