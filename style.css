@@ -83,8 +83,7 @@ figcaption {
 /* Responsividade para tablets e celulares */
 @media (max-width: 900px) {
     h1 {
-        max-width: 100%; /* garante que o título não ultrapasse a largura da tela */
-        font-size: 2rem; /* reduz tamanho do título em tablets */
+        font-size: 1.5rem; /* reduz tamanho do título em tablets */
     }
 
     nav.profiles {
