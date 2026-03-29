@@ -34,6 +34,16 @@ nav.profiles {
     gap: 2rem; /* espaço entre cada perfil */
 }
 
+ul {
+    list-style: none; /* remove marcadores de lista */
+    padding: 0; /* remove padding padrão */
+    margin: 0; /* remove margem padrão */
+    display: flex; /* usa flexbox para organizar os itens */
+    flex-wrap: wrap; /* permite quebra de linha se necessário */
+    justify-content: center; /* centraliza os itens horizontalmente */      
+    gap: 1rem; /* espaço entre os itens da lista */
+}
+
 .profile {
     text-decoration: none; /* remove sublinhado de link, se houver */
     color: #fff; /* cor branca nos textos/links */
@@ -98,8 +108,20 @@ figcaption {
     }
 
     nav.profiles {
+        display: flex; /* mantém flexbox para centralização */
         flex-direction: column; /* empilha perfis verticalmente */
         gap: 1rem; /* espaço menor entre perfis */
+    }
+
+    ul {
+        display: flex; /* mantém flexbox */
+        flex-direction: column; /* lista vertical */
+        align-items: center; /* centraliza itens na vertical da lista */
+        gap: 1rem; /* espaço entre itens de lista */
+    }
+
+    li {
+        width: 100%; /* ocupa largura total do container */
     }
 
     img {
