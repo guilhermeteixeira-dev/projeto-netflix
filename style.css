@@ -12,8 +12,7 @@ h1 {
     text-align: center; /* centraliza o título */
     font-size: 2.5rem; /* título grande para destaque */
     font-weight: bold; /* texto em negrito */
-    margin: 20px; /* espaçamento ao redor do título */
-    padding: 15px; /* padding para melhor espaçamento interno */
+    margin: 50px; /* espaçamento ao redor do título */
 }
 
 main {
@@ -107,7 +106,7 @@ figcaption {
 @media (max-width: 600px) {
     main {
         align-items: center;
-        margin-top: 2rem; /* adiciona margem superior para melhor espaçamento em telas menores */
+        margin-top: 1rem; /* adiciona margem superior para melhor espaçamento em telas menores */
         min-height: auto; /* permite altura automática para telas menores */
         padding: 1rem 0; /* adiciona padding para evitar que o conteúdo encoste nas bordas */
     }
