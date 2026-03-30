@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
+/* Reset básico para todas as tags */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Estilo base do body (modo escuro default) */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: radial-gradient(circle at top, #2b2a2d 0%, #141414 60%);
@@ -18,19 +20,21 @@ body {
     text-align: center;
 }
 
+/* Estilo ativado quando a classe light-mode é aplicada */
 .light-mode {
     background: #fff;
     color: #000;
 }
 
 .light-mode .profile {
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .light-mode figcaption {
     color: #000;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     display: inline-block;
@@ -60,6 +64,7 @@ nav.profiles {
     gap: 2rem;
 }
 
+/* Lista de perfis estilo grid flexível */
 ul {
     list-style: none;
     padding: 0;
@@ -70,6 +75,7 @@ ul {
     gap: 1rem;
 }
 
+/* Estilo dos links de perfil (modo escuro) */
 .profile {
     text-decoration: none;
     color: #fff;
@@ -113,7 +119,7 @@ figcaption {
     right: 20px;
     background-color: rgba(255, 255, 255, 0.15);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px rgba(255, 255, 255, 0.35);
     border-radius: 8px;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -124,6 +130,14 @@ figcaption {
     background-color: rgba(0, 0, 0, 0.15);
     color: #000;
     border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.light-mode .profile:hover {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode img {
+    background-color: #eee;
 }
 
 /* Responsividade para tablets e celulares */
