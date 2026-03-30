@@ -1,55 +1,79 @@
-@charset "UTF-8"; /* define codificação de caracteres UTF-8 */
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-color: #000; /* fundo preto estilo Netflix */
-    color: #fff; /* texto branco para contraste */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* fonte sans-serif legível */
-    margin: 0; /* remove margem padrão do browser */
-    min-height: 100vh; /* garante altura mínima igual à janela */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #2b2a2d 0%, #141414 60%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.light-mode {
+    background: #fff;
+    color: #000;
+}
+
+.light-mode .profile {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.light-mode figcaption {
+    color: #000;
+    background: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 h1 {
-    text-align: center; /* centraliza o título */
-    font-size: 2.5rem; /* título grande para destaque */
-    font-weight: bold; /* texto em negrito */
-    margin: 20px; /* espaçamento ao redor do título */
-    padding: 10px;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    margin-bottom: 0.75rem;
 }
 
 main {
-    display: flex; /* usa flexbox para layout centralizado */
-    flex-direction: column; /* organiza os filhos em coluna */
-    align-items: center; /* centraliza horizontalmente */
-    justify-content: center; /* centraliza verticalmente */
-    min-height: 100vh; /* garante altura mínima igual à janela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section[aria-label="Seleção de perfis"] {
-    width: 100%; /* ocupa 100% da largura disponível */
-    max-width: 600px; /* limite de largura para não esticar demais */
-    display: flex; /* usa flexbox para centralização */
-    justify-content: center; /* centra o nav horizontalmente */
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
+
 nav.profiles {
-    display: flex; /* perfis em linha */
-    gap: 2rem; /* espaço entre cada perfil */
+    display: flex;
+    gap: 2rem;
 }
 
 ul {
-    list-style: none; /* remove marcadores de lista */
-    padding: 0; /* remove padding padrão */
-    margin: 0; /* remove margem padrão */
-    display: flex; /* usa flexbox para organizar os itens */
-    flex-wrap: wrap; /* permite quebra de linha se necessário */
-    justify-content: center; /* centraliza os itens horizontalmente */      
-    gap: 1rem; /* espaço entre os itens da lista */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .profile {
-    text-decoration: none; /* remove sublinhado de link, se houver */
-    color: #fff; /* cor branca nos textos/links */
-    transition: transform 0.2s, box-shadow 0.2s; /* anima transformações e sombra */
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 figure {
@@ -60,65 +84,83 @@ figure {
 }
 
 img {
-    width: 120px; /* largura da imagem do perfil */
-    height: 120px; /* altura da imagem do perfil */
-    border-radius: 8px; /* cantos arredondados */
-    object-fit: cover; /* recorta mantendo proporção */
-    margin-bottom: 0.5rem; /* espaço abaixo da imagem */
-    background-color: #222; /* cor de fundo caso imagem não carregue imediatamente */
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    background-color: #222;
 }
 
 img:hover {
-    border: 1px solid #fff; /* adiciona borda branca ao passar o mouse */
-    transform: scale(1.05); /* levemente amplia a imagem para efeito de foco */
-    transition: transform 0.2s ease, border 0.2s ease; /* suaviza animação no hover */
+    border: 1px solid #fff;
+    transform: scale(1.05);
+    transition: transform 0.2s ease, border 0.2s ease;
 }
 
+
 figcaption {
-    margin-top: 0.5rem; /* espaço entre imagem e legenda */
-    font-size: 1.1rem; /* define a altura do texto da legenda */
-    font-weight: 500; /* leve negrito para melhor legibilidade */
-    letter-spacing: 0.5px; /* espaçamento entre caracteres */
-    color: #fff; /* mantém o texto branco */
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.light-mode #themeToggle {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 /* Responsividade para tablets e celulares */
 @media (max-width: 900px) {
     h1 {
-        align-items: center; /* centraliza o título em telas menores */
-        font-size: 1.5rem; /* reduz tamanho do título em tablets */
+        font-size: 1.5rem;
     }
 
     nav.profiles {
-        flex-direction: row;
-        gap: 1.5rem; /* diminui espaço entre perfis */
+        gap: 1.5rem;
     }
 
     img {
-        width: 100px; /* reduz largura da imagem */
-        height: 100px; /* reduz altura da imagem */
+        width: 100px;
+        height: 100px;
     }
 
     figcaption {
-        font-size: 1rem; /* ajusta tamanho da legenda */
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 600px) {
     main {
         align-items: center;
-        margin-top: 1rem; /* adiciona margem superior para melhor espaçamento em telas menores */
-        min-height: auto; /* permite altura automática para telas menores */
-        padding: 1rem 0; /* adiciona padding para evitar que o conteúdo encoste nas bordas */
+        margin-top: 1rem;
+        min-height: auto;
+        padding: 1rem 0;
     }
 
     nav.profiles {
         flex-direction: column;
-        align-items: center; /* centraliza os perfis verticalmente */
+        align-items: center;
     }
 
     ul {
-        gap: 4rem; /* aumenta espaço entre os itens da lista para melhor toque em telas pequenas */
+        gap: 4rem;
     }
 }
 
